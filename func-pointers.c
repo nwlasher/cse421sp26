@@ -17,7 +17,8 @@ void nPrint(const char *string, void *aux){
 // adn prints only that word to the stdout.
 void sPrint(const char *string, void *aux){
 	// Skip passed aproximately (int)*aux spaces and grab all characters until next space or null
-	char *word = strtok((char *)string, " ");
+	char *copy = strdup((char *)string);
+	char *word = strtok(copy, " ");
     
 	// Find (int)aux-1th word (since I called it above)
     for (int i = 0; i < (int)aux-1; i++) {
